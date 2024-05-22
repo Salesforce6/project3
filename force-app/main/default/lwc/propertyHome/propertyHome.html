@@ -1,13 +1,16 @@
 <template>
-    <template for:each={propertiesToDisplay} for:item="property">
-        <lightning-card key={property.id} title="property card">
-            <div>
-                <img src={propertyImg} alt="Property image" />
-            </div>
-            {property.Name}
-            Cost: ${property.Cost}
-            Square Footage: {property.SquareFootage}
-            Bed/Bath: {property.BedBath}
-        </lightning-card>
+    <template lwc:if={propertiesToDisplay}>
+        <template for:each={propertiesToDisplay} for:item="property">
+            <lightning-card key={property.id} title="property card">
+                <div>
+                    <img src={propertyImg} alt="Property image" />
+                </div>
+                {property__c.Name}
+                Square Footage: {property__c.SqFt__c}
+                Bed/Bath: {property__c.Beds__c}/{property__c.Bathrooms__c}
+                City: {property__c.city__c}
+                State: {property__c.state__c}
+            </lightning-card>
+        </template>
     </template>
 </template>
