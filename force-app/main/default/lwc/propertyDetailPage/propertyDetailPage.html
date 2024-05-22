@@ -1,0 +1,39 @@
+<template>
+    <template lwc:if={recordId}>
+            <lightning-record-view-form
+            object-api-name={objectApiName}
+            record-id={recordId}>
+            <lightning-card>
+                <lightning-output-field field-name={fields.name}></lightning-output-field>
+                <lightning-output-field field-name={fields.beds}></lightning-output-field>
+                <lightning-output-field field-name={fields.bath}></lightning-output-field>
+                <lightning-output-field field-name={fields.sqft}></lightning-output-field>
+                <lightning-output-field field-name={fields.pets}></lightning-output-field>
+                <lightning-output-field field-name={fields.street}></lightning-output-field>
+                <lightning-output-field field-name={fields.state}></lightning-output-field>
+                <lightning-output-field field-name={fields.city}></lightning-output-field>
+                <lightning-output-field field-name={fields.zipCode}></lightning-output-field>
+                <lightning-output-field field-name={fields.description}></lightning-output-field>
+            </lightning-card>
+            </lightning-record-view-form>
+    </template>
+    <lightning-card>Testing Display an image from 
+        ContentDocument {imageUrl}</lightning-card>
+
+    <template if:true={contentDocImage}>
+        <img src={imageUrl}/>
+    </template>
+
+    <!--
+    <div>Carousel Test</div>
+            <lightning-carousel>
+                <lightning-carousel-image
+                    src = "https://www.lightningdesignsystem.com/assets/images/carousel/carousel-01.jpg"
+                    header = "First Card"
+                    description = "First card description."
+                    alternative-text = "First card accessible description."
+                    href = "javascript:void(0);">
+                </lightning-carousel-image>
+            </lightning-carousel>-->
+    
+</template>
