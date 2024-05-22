@@ -1,6 +1,7 @@
 import { LightningElement, wire } from 'lwc';
 import getPopularPropertiesRecords from '@salesforce/apex/PropertiesHomeController.getPopularPropertiesRecords';
 import propertyImg from '@salesforce/resourceUrl/nameOfImg';
+import { NavigationMixin } from 'lightning/navigation';
 
 export default class PropertyHome extends LightningElement {
 
@@ -23,5 +24,20 @@ export default class PropertyHome extends LightningElement {
         if(data) {
             this.propertiesToDisplay = data;
         }
+    }
+
+    navToPropertyPage(e) {
+
+        // the name Residence_Viewer__c needs to correspond with
+        // the api name of the page made in experience builder
+        this[NavigationMixin.Navigate]({
+            type: 'comm__namedPage',
+            attributes: {
+                name: 'Residence_Viewer__c',
+            },
+            state: {
+                c__recordId: e.target.dataset.id
+            }
+        });
     }
 }

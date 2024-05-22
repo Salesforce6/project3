@@ -10,6 +10,7 @@
                 Bed/Bath: {property__c.Beds__c}/{property__c.Bathrooms__c}
                 City: {property__c.city__c}
                 State: {property__c.state__c}
+                <lightning-button variant="brand" data-id={property.id} onclick={navToPropertyPage} label="More detail"></lightning-button>
             </lightning-card>
         </template>
     </template>
