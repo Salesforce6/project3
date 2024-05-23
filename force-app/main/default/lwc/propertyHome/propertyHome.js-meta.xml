@@ -5,7 +5,6 @@
     <targets>
         <target>lightning__HomePage</target>
         <target>lightning__AppPage</target>
-        <target>lighting__Tab</target>
         <target>lightningCommunity__Page</target>
     </targets>
 </LightningComponentBundle>
