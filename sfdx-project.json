@@ -2,18 +2,11 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true,
-      "package": "p3miguel",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
-      "versionDescription": ""
+      "default": true
     }
   ],
   "name": ".",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "59.0",
-  "packageAliases": {
-    "p3miguel@0.1.0-1": "04tak0000001YqrAAE"
-  }
+  "sourceApiVersion": "59.0"
 }
