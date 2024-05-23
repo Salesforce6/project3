@@ -11,15 +11,11 @@ import CityField from '@salesforce/schema/Property__c.City__c'
 import BedField from '@salesforce/schema/Property__c.Beds__c'
 import BathroomField from '@salesforce/schema/Property__c.Bathrooms__c'
 import SqftField from '@salesforce/schema/Property__c.Sqft__c'
-import { getFieldValue, getRecord } from 'lightning/uiRecordApi';
-import ImageField from 
-    '@salesforce/schema/ContentDocument.LatestPublishedVersion.VersionDataUrl';
 
 
 export default class propertyDetailPage extends LightningElement {  
     @api
     recordId;
-    passingRecordId;
     @track
     currentPageReference;
     
@@ -43,20 +39,7 @@ export default class propertyDetailPage extends LightningElement {
     }
     connectedCallback() {
         this.recordId = this.currentPageReference?.state?.c__recordId;
-    }
-
-    @wire(getRecord, {recordId: "069bm000001nLoPAAU", fields: [ImageField]})
-    contentDocImage;
-
-    get imageUrl() {
-        return getFieldValue(this.contentDocImage.data, ImageField);
-    }
-
-    get resizedImageUrl() {
-        return getFieldValue(this.contentDocImage.data, ImageField) + 
-            '?thumb=THUMB240BY180';
-    }
-    
+    } 
 
 
 }

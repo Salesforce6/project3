@@ -1,28 +1,25 @@
 <template>
-    <template lwc:if={recordId}>
-            <lightning-record-view-form
-            object-api-name={objectApiName}
-            record-id={recordId}>
-            <lightning-card>
-                <lightning-output-field field-name={fields.name}></lightning-output-field>
-                <lightning-output-field field-name={fields.beds}></lightning-output-field>
-                <lightning-output-field field-name={fields.bath}></lightning-output-field>
-                <lightning-output-field field-name={fields.sqft}></lightning-output-field>
-                <lightning-output-field field-name={fields.pets}></lightning-output-field>
-                <lightning-output-field field-name={fields.street}></lightning-output-field>
-                <lightning-output-field field-name={fields.state}></lightning-output-field>
-                <lightning-output-field field-name={fields.city}></lightning-output-field>
-                <lightning-output-field field-name={fields.zipCode}></lightning-output-field>
-                <lightning-output-field field-name={fields.description}></lightning-output-field>
-            </lightning-card>
-            </lightning-record-view-form>
-    </template>
-    <lightning-card>Testing Display an image from 
-        ContentDocument {imageUrl}</lightning-card>
-
-    <template if:true={contentDocImage}>
-        <img src={imageUrl}/>
-    </template>
+    <lightning-card>
+        <template lwc:if={recordId}>
+                <lightning-record-view-form
+                object-api-name={objectApiName}
+                record-id={recordId}>
+                <lightning-card>
+                    <lightning-output-field field-name={fields.name}></lightning-output-field>
+                    <lightning-output-field field-name={fields.beds}></lightning-output-field>
+                    <lightning-output-field field-name={fields.bath}></lightning-output-field>
+                    <lightning-output-field field-name={fields.sqft}></lightning-output-field>
+                    <lightning-output-field field-name={fields.pets}></lightning-output-field>
+                    <lightning-output-field field-name={fields.street}></lightning-output-field>
+                    <lightning-output-field field-name={fields.state}></lightning-output-field>
+                    <lightning-output-field field-name={fields.city}></lightning-output-field>
+                    <lightning-output-field field-name={fields.zipCode}></lightning-output-field>
+                    <lightning-output-field field-name={fields.description}></lightning-output-field>
+                </lightning-card>
+                </lightning-record-view-form>
+                <c-property-detail-image-component record-id={recordId}></c-property-detail-image-component>
+        </template>
+    </lightning-card>
 
     <!--
     <div>Carousel Test</div>

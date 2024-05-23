@@ -43,3 +43,10 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+
+force-app/main/default/classes/propertyClass.cls
+force-app/main/default/classes/propertyClass.cls-meta.xml
+force-app/main/default/lwc/navigationLinkExample/navigationLinkExample.html
+force-app/main/default/lwc/navigationLinkExample/navigationLinkExample.js
+force-app/main/default/lwc/navigationLinkExample/navigationLinkExample.js-meta.xml
+force-app/main/default/lwc/navigationLinkExample/__tests__/navigationLinkExample.test.js
