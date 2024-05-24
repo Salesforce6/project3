@@ -1,12 +1,18 @@
 <template>
-    <div class="slds-align_absolute-center hero-container">
-        <div class="caption">
-            <div class="blur">
-                <h1><b>your next stay awaits</b></h1>
-                <lightning-button variant="brand-outline" label="See properties" onclick={handleButtonClick}></lightning-button>
-                <lightning-button variant="brand-outline" label="Book a tour" onclick={handleBookTourButton}></lightning-button>
+    <div class="hero-container">
+        <div class="hero-images">
+            <div class="caption">
+                <div class="blur">
+                    <span><h1>your next stay</h1></span>
+                    <div><h1 style="font-size: 2em;">awaits</h1></div>
+                    <div class="hero_button-group">
+                        <lightning-button variant="none" label="See properties" onclick={handleButtonClick}></lightning-button>
+                        <lightning-button variant="none" label="Book a tour" onclick={handleBookTourButton}></lightning-button>
+
+                    </div>
+                </div>
             </div>
+
         </div>
-        <div class="hero-images"></div>
     </div>
 </template>
