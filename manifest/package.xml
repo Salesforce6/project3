@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>NavigationLinkSetPickList</members>
+        <members>NavigationMenuItemsController</members>
         <members>PropertyHelper</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>hero_component</members>
+        <members>navigationMenu</members>
+        <members>navigationMenuItem</members>
+        <members>navigationMenuLogo</members>
         <members>styleResource</members>
         <name>LightningComponentBundle</name>
     </types>
