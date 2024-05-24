@@ -1,0 +1,12 @@
+<!-- navigationLinkExample.html -->
+<template>
+    <p>You can remove me I am for testing purpose.</p>
+    <template lwc:if={wiredProperty.data}>
+      <template for:each={wiredProperty.data} for:item="prop">
+          <lightning-card key={prop.Id}>
+              <p>{prop.Name}</p>
+              <a data-id={prop.Id} onclick={handleClickToPropDetail}>See More</a>
+          </lightning-card>      
+      </template>
+  </template>
+  </template>

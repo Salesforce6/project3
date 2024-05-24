@@ -1,0 +1,32 @@
+<template>
+        <template lwc:if={imgList}>
+            <template for:each={imgList} for:item="img">
+                <div key={img.Id} class="slds-col">
+                    <img src={img.VersionDataUrl}/> 
+                </div>
+            </template> 
+        </template>  
+
+        <!-- <lightning-card>Testing Display an image from 
+            ContentDocument {imageUrl}</lightning-card>
+    
+        <template if:true={contentDocImage}>
+            <img src={imageUrl}/>
+        </template> -->
+
+        <!-- <template lwc:if={imgList}>
+            <div class="slds-size_3-of-4">
+                <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+                    <lightning-carousel disable-auto-scroll slot=1>
+                        <div class="slds-carousel__panels" >
+                            <template for:each={imgList} for:item="img">
+                                    <lightning-carousel-image class="max-large-" key={img.Id} src={img.VersionDataUrl}
+                                    alternative-text = "First card accessible description."></lightning-carousel-image>
+                            </template>
+                        </div>
+                    </lightning-carousel>
+                </div>
+            </div>
+        </template> -->
+
+</template>

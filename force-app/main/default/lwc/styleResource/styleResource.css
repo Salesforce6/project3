@@ -1,0 +1,58 @@
+:host {
+    --thisVaar: 720px;
+}
+.hero-container {
+    height: var(--thisVaar, 720px);
+    box-shadow: inset 3px 16px 20px 8px rgba(0, 0, 0, 0.2), 0px -3px 20px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/resource/heroImage');
+    background-size: cover;
+    background-position: bottom;
+    padding: 8px;
+}
+
+.hero-images {
+    position: relative;
+    height: 100%;
+}
+
+.caption {
+    position: sticky;
+    top: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.blur {
+    color: aliceblue;
+    text-shadow: 0 0 20px black, 0 0 20px black, 0 0 20px black;
+    border: 1px solid white;
+    backdrop-filter: blur(4px) brightness(1.1);
+    border-radius: 1em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+.hero_button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+lightning-button button.slds-button.slds-button_neutral {
+    all: unset;
+    padding: 12px;
+    /* TODO: find out why it is not applying */
+}
+
+lightning-button {
+    border: 1px solid white;
+    text-shadow: 0px 0px 10px white;
+    all: unset;
+    padding: 12px;
+}
