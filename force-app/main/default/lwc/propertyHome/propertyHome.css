@@ -1,0 +1,22 @@
+.property_home_detail_available {
+    color: blue;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 35px;
+}
+
+.property_home_detail_name {
+    font-weight: bold;
+    padding-left: 20px;
+    font-size: 35px;
+}
+
+.property_home_detail {
+    padding-left: 30px;
+    font-size: 25px;
+}
+
+.more-detail-button {
+    padding-left: 30px;
+    font-size: 25px;
+}

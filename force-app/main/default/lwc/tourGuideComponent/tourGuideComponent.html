@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+        <form class="createForm">
+            <lightning-input required label="First Name" name="FirstName" onchange={changeHandlerLead}></lightning-input>
+            <lightning-input required label="Last Name" name="LastName" onchange={changeHandlerLead}></lightning-input>
+            <lightning-input required label="Email" name="Email" type="Email" onchange={changeHandlerLead}></lightning-input>
+            <lightning-input required label="Tour Date" class="dateInput"  min={minDate} message-when-range-underflow="Past dates should not be selected" type="datetime" name="Touring_Date__c" onchange={changeHandlerTour}></lightning-input>
+            <lightning-button label="Submit" onclick={submitTour} variant="brand"></lightning-button>
+        </form>
+    </lightning-card>
+    
+    <!-- <lightning-card>
+        <form class="createForm">
+            <lightning-input label="Account Name" name="Name" onchange={changeHandler}></lightning-input>
+            <lightning-input label="First Name" name="FirstName" onchange={changeHandlerCon}></lightning-input>
+            <lightning-input label="Last Name" name="LastName" onchange={changeHandlerCon}></lightning-input>
+            <lightning-button label="Submit" onclick={submitTour} variant="brand"></lightning-button>
+        </form>
+    </lightning-card> -->
+    
+</template>

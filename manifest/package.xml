@@ -2,6 +2,8 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>PropertiesHomeController</members>
+        <members>propertyClass</members>
+        <members>MaintenanceRequestHelper</members>
         <name>ApexClass</name>
     </types>
     <types>

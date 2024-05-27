@@ -1,20 +1,25 @@
 <template>
     <template lwc:if={propertiesToDisplay}>
-        <template for:each={propertiesToDisplay} for:item="property">
-            <lightning-card key={property.id} title="Available" class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12 slds-large-size_6-of-12 slds-m-top_xx-small">
-                <!-- <div>
-                    <img src={propertyImg} alt="Property image" />
-                </div> -->
-                <p>{property.Name}</p>
-                <div>
-                    <p>Square Footage: {property.Sqft__c}</p>
-                    <p>Bed/Bath: {property.Beds__c}/{property.Bathrooms__c}</p>
-                    <p>City: {property.City__c}</p>
-                    <p>State: {property.State__c}</p>
-                </div>
-               
-                <lightning-button variant="brand" data-id={property.Id} onclick={navToPropertyPage} label="More detail"></lightning-button>
-            </lightning-card>
-        </template>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <template for:each={propertiesToDisplay} for:item="property">
+                <lightning-card key={property.id} class="slds-col slds-size_1-of-1  slds-var-m-top_xx-small">
+                    <!-- <div>
+                        <img src={propertyImg} alt="Property image" />
+                    </div> -->
+                    <p class="property_home_detail_available">Available</p>
+                    <p class="property_home_detail_name">{property.Name}</p>
+                    <div class="property_home_detail">
+                        Square Footage: {property.Sqft__c},
+                        Bed/Bath: {property.Beds__c}/{property.Bathrooms__c},
+                        City: {property.City__c},
+                        State: {property.State__c}         
+                        
+                    </div>
+                    <div class="more-detail-button">
+                        <lightning-button variant="brand" data-id={property.Id} onclick={navToPropertyPage} label="More detail"></lightning-button>
+                    </div>
+                </lightning-card>
+            </template>
+        </div>
     </template>
 </template>
