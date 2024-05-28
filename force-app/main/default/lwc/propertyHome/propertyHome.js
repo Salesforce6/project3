@@ -40,4 +40,13 @@ export default class PropertyHome extends NavigationMixin(LightningElement) {
             }
         });
     }
+
+    navToMaintenanceRequestForm(e) {
+        this[NavigationMixin.Navigate]({
+            type: 'comm__namedPage',
+            attributes: {
+                name: 'Maintenance_Request_Form__c', // Correct API name
+            }
+        });
+    }
 }

@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import { NavigationMixin } from "lightning/navigation";
+import { NavigationMixin, CurrentPageReference } from "lightning/navigation";
 import OBJECT_API_NAME from '@salesforce/schema/Case';
 import SUBJECT_FIELD from '@salesforce/schema/Case.Subject';
 import TYPE_FIELD from '@salesforce/schema/Case.Type'
@@ -11,6 +11,9 @@ import getUserInfo from '@salesforce/apex/MaintenanceRequestHelper.getUserInfo';
 
 
 export default class MaintenanceRequest extends NavigationMixin(LightningElement) {
+
+    @api
+    recordId 
 
     @api
     objectApiName = OBJECT_API_NAME;
@@ -48,5 +51,11 @@ export default class MaintenanceRequest extends NavigationMixin(LightningElement
             mode: 'sticky',
             variant: 'success'
         }, this);
+    }
+
+
+    @wire(CurrentPageReference)
+    setCurrentPageReference(currentPageReference) {
+        this.recordId = currentPageReference?.state?.c__recordId;
     }
 }
