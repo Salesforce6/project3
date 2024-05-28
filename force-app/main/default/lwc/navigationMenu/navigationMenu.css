@@ -1,6 +1,11 @@
+:host {
+    /* max-height: 72px; */
+    /* TODO: Find out why it is not applying */
+}
 .navbar {
     padding-bottom: 0.625rem;
     background-color: var(--dxp-g-root);
+    /* max-height: 72px; */
 }
 
 .navbar-items {

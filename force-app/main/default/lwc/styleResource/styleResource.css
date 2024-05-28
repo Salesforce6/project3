@@ -9,7 +9,7 @@
     justify-content: center;
     background-image: url('/resource/heroImage');
     background-size: cover;
-    background-position: bottom;
+    background-position: 25%;
     padding: 8px;
 }
 
@@ -26,14 +26,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: 38px;
+    line-height: 56px;
 }
 .blur {
     color: aliceblue;
     text-shadow: 0 0 20px black, 0 0 20px black, 0 0 20px black;
     border: 1px solid white;
     backdrop-filter: blur(4px) brightness(1.1);
-    border-radius: 1em;
-    padding: 2em;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
     display: flex;
     flex-direction: column;
 }

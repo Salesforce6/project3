@@ -1,11 +1,11 @@
 import { LightningElement, api } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
-import AGENT_LOGO from '@salesforce/resourceUrl/menuLogoAgent';
+import AGENT_LOGO from '@salesforce/resourceUrl/MenuLogoAgentSquare';
 import AGENT_MOBILE_LOGO from '@salesforce/resourceUrl/agentHamburgerMenuLogo';
-import AZINSURANCE_LOGO from '@salesforce/resourceUrl/azinsurancelogo';
-import AZINSURANCE_MOBILE_LOGO from '@salesforce/resourceUrl/marketingHamburgerMenuLogo';
-import CUSTOMER_LOGO from '@salesforce/resourceUrl/menuLogoCustomer';
-import CUSTOMER_MOBILE_LOGO from '@salesforce/resourceUrl/customerHamburgerMenuLogo';
+import AZINSURANCE_LOGO from '@salesforce/resourceUrl/MenuLogoAgentSquare';//
+import AZINSURANCE_MOBILE_LOGO from '@salesforce/resourceUrl/marketingHamburgerMenuLogo';//
+import CUSTOMER_LOGO from '@salesforce/resourceUrl/MenuLogoAgentSquare';//
+import CUSTOMER_MOBILE_LOGO from '@salesforce/resourceUrl/customerHamburgerMenuLogo';//
 
 export default class NavigationMenuLogo extends NavigationMixin(
     LightningElement
