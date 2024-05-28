@@ -1,12 +1,11 @@
 import { LightningElement, wire } from 'lwc';
 import getPopularPropertiesRecords from '@salesforce/apex/PropertiesHomeController.getPopularPropertiesRecords';
-// import propertyImg from '@salesforce/resourceUrl/nameOfImg';
 import { NavigationMixin } from 'lightning/navigation';
 
 export default class PropertyHome extends NavigationMixin(LightningElement) {
 
     propertiesToDisplay;
-    // sfiage  = propertyImg;
+
 
     @wire(getPopularPropertiesRecords)
     GetPropertiesHandler(response) {
