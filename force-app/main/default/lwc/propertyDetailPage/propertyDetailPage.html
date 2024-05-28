@@ -1,6 +1,7 @@
 <template>
     <lightning-card>
         <template lwc:if={recordId}>
+            <c-property-detail-image-component record-id={recordId}></c-property-detail-image-component>
                 <lightning-record-view-form
                 object-api-name={objectApiName}
                 record-id={recordId}>
@@ -17,7 +18,7 @@
                     <lightning-output-field field-name={fields.description}></lightning-output-field>
                 </lightning-card>
                 </lightning-record-view-form>
-                <c-property-detail-image-component record-id={recordId}></c-property-detail-image-component>
+                <c-tour-guide-component record-id={recordId}></c-tour-guide-component>
         </template>
     </lightning-card>
 
