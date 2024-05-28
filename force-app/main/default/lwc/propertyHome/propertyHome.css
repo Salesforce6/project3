@@ -1,13 +1,33 @@
+.property-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.image {
+    flex: 1;
+    padding: 10px;
+}
+
+.info {
+    flex:2;
+    padding: 10px;
+}
+.available {
+    text-align: center;
+}
+
 .property_home_detail_available {
+
     color: blue;
     font-weight: bold;
-    padding-left: 10px;
+    padding-left: 30px;
     font-size: 35px;
 }
 
 .property_home_detail_name {
     font-weight: bold;
-    padding-left: 20px;
+    padding-left: 30px;
     font-size: 35px;
 }
 
@@ -19,4 +39,41 @@
 .more-detail-button {
     padding-left: 30px;
     font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .property_home_detail_available {
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .property-wrapper {
+        display: block;
+    }
+
+    .image, .info {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .property_home_detail_available,
+    .property_home_detail_name,
+    .property_home_detail,
+    .more-detail-button {
+        padding-left: 10px; 
+        font-size: 18px; 
+    }
+
+    .property_home_detail {
+        padding-left: 10px; 
+        font-size: 16px; 
+    }
+
+    .more-detail-button {
+        padding-left: 10px; 
+        font-size: 16px; 
+    }
 }

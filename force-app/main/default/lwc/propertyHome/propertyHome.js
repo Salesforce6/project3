@@ -6,7 +6,6 @@ export default class PropertyHome extends NavigationMixin(LightningElement) {
 
     propertiesToDisplay;
 
-
     @wire(getPopularPropertiesRecords)
     GetPropertiesHandler(response) {
         // {error, data}
