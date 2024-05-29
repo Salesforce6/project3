@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="User Information">
+
+        <template if:true={guestUser}>
+            <p>Username: {guestUser.Username}</p>
+            <p>Email: {guestUser.Email}</p>
+            <p>Last Login Date: {guestUser.LastLoginDate}</p>
+            <p>Balance: {guestUser.Balance__c}</p>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">Please Log in</p>
+        </template>
+    </lightning-card>
+</template>
