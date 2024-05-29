@@ -4,7 +4,6 @@
         <members>NavigationLinkSetPickList</members>
         <members>NavigationMenuItemsController</members>
         <members>PropertyHelper</members>
-        <members>PropertiesHomeController</members>
         
         <name>ApexClass</name>
     </types>
