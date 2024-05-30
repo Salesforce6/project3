@@ -163,3 +163,11 @@ force-app/main/default/staticresources/heroImage.resource-meta.xml
 force-app/main/default/staticresources/PropertyLogo.resource-meta.xml
 force-app/main/default/staticresources/SiteSamples.resource-meta.xml
 force-app/main/default/staticresources/SiteSamples/SiteStyles.css
+force-app/main/default/objects/Contact/fields/Head_of_Household__c.field-meta.xml
+force-app/main/default/objects/Contact/fields/Is_Head_of_Household__c.field-meta.xml
+force-app/main/default/objects/Monthly_Statement__c/Monthly_Statement__c.object-meta.xml
+force-app/main/default/objects/Monthly_Statement__c/fields/Balance__c.field-meta.xml
+force-app/main/default/objects/Monthly_Statement__c/fields/Property__c.field-meta.xml
+force-app/main/default/objects/Monthly_Statement__c/fields/Statement_Date__c.field-meta.xml
+force-app/main/default/objects/Monthly_Statement__c/fields/Tenant__c.field-meta.xml
+force-app/main/default/objects/Monthly_Statement__c/listViews/All.listView-meta.xml
