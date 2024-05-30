@@ -5,7 +5,9 @@
                     <p><strong>First Name:</strong> {contact.FirstName}</p>
                     <p><strong>Last Name:</strong> {contact.LastName}</p>
                     <p><strong>Email:</strong> {contact.Email}</p>
-                    <p><strong>Balance:</strong> {contact.Balance__C}</p>
+                    <p><strong>Balance:</strong> 
+                        <lightning-formatted-number value={contact.Balance__c} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </p>
             </div>
         </lightning-card>
     </template>
