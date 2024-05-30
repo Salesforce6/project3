@@ -1,18 +1,30 @@
+
 public with sharing class GuestUserController {
     @AuraEnabled(cacheable=true)
-    public static User getGuestUserInfo() {
-        try {
-            // Query the User object to get the guest user details
-            String UserId = UserInfo.getUserId();
-            User guestUser = [
-                SELECT Id, Username, Email, LastLoginDate, Contact.Balance__c
-                FROM User 
-                WHERE Id = :UserId
+    public static Contact getContactForUser() {
+        // Get the current user's ID
+        String currentUserId = UserInfo.getUserId();
+        
+        // Query the User record to get the Contact ID
+        User currentUser = [
+            SELECT ContactId 
+            FROM User 
+            WHERE Id = :currentUserId
+            LIMIT 1
+        ];
+        
+        // If the user has a contact associated, fetch the contact details
+        if (currentUser.ContactId != null) {
+            Contact contact = [
+				SELECT Id, FirstName, LastName, Email, Balance__c
+                FROM Contact 
+                WHERE Id = :currentUser.ContactId
                 LIMIT 1
             ];
-            return guestUser;
-        } catch (Exception e) {
-            throw new AuraHandledException('Error retrieving guest user information: ' + e.getMessage());
+            return contact;
         }
+        
+        // Return null if no contact is associated with the user
+        return null;
     }
 }

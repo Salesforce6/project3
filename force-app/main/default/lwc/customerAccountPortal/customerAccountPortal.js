@@ -1,18 +1,22 @@
 import { LightningElement, wire } from 'lwc';
-import getGuestUserInfo from '@salesforce/apex/GuestUserController.getGuestUserInfo';
+import getContactForUser from '@salesforce/apex/GuestUserController.getContactForUser';
 
-export default class GuestUserInfo extends LightningElement {
-    guestUser;
+export default class GuestUserController extends LightningElement {
+    contact;
     error;
 
-    @wire(getGuestUserInfo)
-    wiredGuestUser({ error, data }) {
+    @wire(getContactForUser)
+    wiredContact({ error, data }) {
         if (data) {
-            this.guestUser = data;
+            this.contact = data;
             this.error = undefined;
         } else if (error) {
             this.error = error;
-            this.guestUser = undefined;
+            this.contact = undefined;
         }
+    }
+
+    get hasContact() {
+        return this.contact !== undefined;
     }
 }

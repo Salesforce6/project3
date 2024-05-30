@@ -1,14 +1,19 @@
 <template>
-    <lightning-card title="User Information">
-
-        <template if:true={guestUser}>
-            <p>Username: {guestUser.Username}</p>
-            <p>Email: {guestUser.Email}</p>
-            <p>Last Login Date: {guestUser.LastLoginDate}</p>
-            <p>Balance: {guestUser.Balance__c}</p>
-        </template>
-        <template if:true={error}>
-            <p class="slds-text-color_error">Please Log in</p>
-        </template>
-    </lightning-card>
+    <template if:true={hasContact}>
+        <lightning-card title="Contact Information" icon-name="standard:contact">
+            <div class="slds-p-around_medium">
+                    <p><strong>First Name:</strong> {contact.FirstName}</p>
+                    <p><strong>Last Name:</strong> {contact.LastName}</p>
+                    <p><strong>Email:</strong> {contact.Email}</p>
+                    <p><strong>Balance:</strong> {contact.Balance__C}</p>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:false={hasContact}>
+        <lightning-card title="Contact Information" icon-name="standard:contact">
+            <div class="slds-p-around_medium">
+                <p>No contact information available for the current user.</p>
+            </div>
+        </lightning-card>
+    </template>
 </template>
