@@ -1,25 +1,49 @@
+.gutter-control {
+    width: 95%;
+}
+
+.card-wrapper {
+    display:flex;
+    justify-content: center;
+}
+
 .property-wrapper {
-    display: flex;
+    display: flex-column;
     align-items: flex-start;
     gap: 10px;
+
+}
+
+.custom-card-wrapper {
+    background-color: rgb(167, 158, 192);
+    border: 2px solid lightgray;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    margin: 30px;
+}
+
+.available {
+    background-color: rgb(43, 43, 79);
+    border-radius: 40px;
+    text-align: center;
 }
 
 .image {
     flex: 1;
     padding: 10px;
+    align-content:center;
 }
 
 .info {
     flex:2;
     padding: 10px;
 }
-.available {
-    text-align: center;
-}
 
 .property_home_detail_available {
-
-    color: blue;
+    border-radius: 40px;
+    color: white;
     font-weight: bold;
     padding-left: 30px;
     font-size: 35px;
@@ -37,18 +61,40 @@
 }
 
 .more-detail-button {
+    display: flex;
+    justify-content: center;
     padding-left: 30px;
     font-size: 25px;
+    background-color: rgb(43, 43, 79);
+    color: white;
+    border-radius: 40px;
 }
 
 @media screen and (max-width: 768px) {
     .property_home_detail_available {
         text-align: center;
     }
+    .info {
+        width: 100%;
+    }
+    .custom-card-wrapper {
+        margin: 15px;
+        width: 40%;
+    }
     
 }
 
 @media screen and (max-width: 480px) {
+    .custom-card-wrapper {
+        margin: 10px 10px;
+        height: 375px;
+    }
+    
+    .custom-card-wrapper {
+        display: block;
+        width: 95%;
+    }
+
     .property-wrapper {
         display: block;
     }
@@ -61,19 +107,14 @@
 
     .property_home_detail_available,
     .property_home_detail_name,
-    .property_home_detail,
-    .more-detail-button {
+    .property_home_detail
+     {
         padding-left: 10px; 
-        font-size: 18px; 
+        font-size: 25px; 
     }
 
     .property_home_detail {
         padding-left: 10px; 
-        font-size: 16px; 
-    }
-
-    .more-detail-button {
-        padding-left: 10px; 
-        font-size: 16px; 
+        font-size: 20px; 
     }
 }

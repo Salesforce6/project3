@@ -1,66 +1,42 @@
+<!--slds-m-left_medium slds-m-right_medium slds-var-m-top_xx-small-->
 <template>
     <template lwc:if={propertiesToDisplay}>
-        <div class="slds-grid slds-gutters slds-wrap">
-            <template for:each={propertiesToDisplay} for:item="propertyWrapper">
-                <lightning-card key={propertyWrapper.property.id} class="slds-col slds-size_1-of-1  slds-var-m-top_xx-small slds-p-top_medium slds-p-bottom_medium">
-                    <div class="available">
-                        <p class="property_home_detail_available">Available</p>
+        <div class="gutter-control">
+            <div class="slds-grid slds-grid_vertical-align-end slds-gutters slds-wrap card-wrapper">
+                <template for:each={propertiesToDisplay} for:item="propertyWrapper">
+                    <div key={propertyWrapper.property.Id} class="custom-card-wrapper slds-col slds-small-size--1-of-1 slds-medium-size--1-of-3 slds-large-size--1-of-5   slds-p-top_medium slds-p-bottom_medium slds-scrollable_y">
+                            <div class="available">
+                                <p class="property_home_detail_available">Available</p>
+                            </div>
+                            <div class="property-wrapper">
+                                <template lwc:if={propertyWrapper.imageUrl}>
+                                    <div class="image">
+                                        <img src={propertyWrapper.imageUrl} alt="Property image" />
+                                    </div>
+                                </template>
+                                <div class="info">
+                                    
+                                    <p class="property_home_detail_name">{propertyWrapper.property.Name}</p>
+                                    <div class="property_home_detail">
+                                        Square Footage:<br> {propertyWrapper.property.Sqft__c} sq. ft. <br>
+                                        Bed/Bath: {propertyWrapper.property.Beds__c}/{propertyWrapper.property.Bathrooms__c}<br>
+                                        City:<br> {propertyWrapper.property.City__c}<br>
+                                        State: {propertyWrapper.property.State__c}         
+                                    </div>
+                                    <div>
+                                        <button class="more-detail-button slds-button_stretch" data-id={propertyWrapper.property.Id} onclick={navToPropertyPage}>More Details
+                                            <!-- <lightning-button variant="brand" data-id={propertyWrapper.property.Id}  onclick={navToPropertyPage} label="More Details"></lightning-button> -->
+                                        </button>
+                                    </div>
+                                    <!-- <div>
+                                        <lightning-button variant="brand" onclick={navToMaintenanceRequestForm} label="Maintenance Form"></lightning-button>
+                                    </div> -->
+                                </div> 
+                            </div>   
                     </div>
-                    <div class="property-wrapper">
-                        <template lwc:if={propertyWrapper.imageUrl}>
-                            <div class="image">
-                                <img src={propertyWrapper.imageUrl} alt="Property image" />
-                            </div>
-                        </template>
-                        <div class="info">
-                            
-                            <p class="property_home_detail_name">{propertyWrapper.property.Name}</p>
-                            <div class="property_home_detail">
-                                Square Footage: {propertyWrapper.property.Sqft__c} sq. ft. <br>
-                                Bed/Bath: {propertyWrapper.property.Beds__c}/{propertyWrapper.property.Bathrooms__c}<br>
-                                City: {propertyWrapper.property.City__c}<br>
-                                State: {propertyWrapper.property.State__c}         
-                            </div>
-                            <div class="more-detail-button">
-                                <lightning-button variant="brand" data-id={propertyWrapper.property.Id} onclick={navToPropertyPage} label="More detail"></lightning-button>
-                            </div>
-                            <div class="more-detail-button">
-                                <lightning-button variant="success"  onclick={navToMaintenanceRequestForm} label="Maintenance Form"></lightning-button>
-                            </div>
-                        </div> 
-                    </div>   
-                </lightning-card>
-            </template>
+                </template>
+            </div>
         </div>
+       
     </template>
 </template>
-
-<!-- <template>
-    <template lwc:if={propertiesToDisplay}>
-        <div class="slds-grid slds-gutters slds-wrap">
-            <template for:each={propertiesToDisplay} for:item="propertyWrapper">
-                <lightning-card key={propertyWrapper.property.Id} class="slds-col slds-size_1-of-1 slds-var-m-top_xx-small">
-                    <template lwc:if={propertyWrapper.imageUrl}>
-                        <div>
-                            <img src={propertyWrapper.imageUrl} alt="Property image" />
-                        </div>
-                    </template>
-                    <p class="property_home_detail_available">Available</p>
-                    <p class="property_home_detail_name">{propertyWrapper.property.Name}</p>
-                    <div class="property_home_detail">
-                        Square Footage: {propertyWrapper.property.Sqft__c},
-                        Bed/Bath: {propertyWrapper.property.Beds__c}/{propertyWrapper.property.Bathrooms__c},
-                        City: {propertyWrapper.property.City__c},
-                        State: {propertyWrapper.property.State__c}         
-                    </div>
-                    <div class="more-detail-button">
-                        <lightning-button variant="brand" data-id={propertyWrapper.property.Id} onclick={navToPropertyPage} label="More detail"></lightning-button>
-                    </div>
-                    <div class="more-detail-button">
-                        <lightning-button variant="success" onclick={navToMaintenanceRequestForm} label="Maintenance Form"></lightning-button>
-                    </div>
-                </lightning-card>
-            </template>
-        </div>
-    </template>
-</template> -->

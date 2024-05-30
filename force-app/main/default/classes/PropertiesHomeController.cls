@@ -30,10 +30,10 @@ public with sharing class PropertiesHomeController {
         }
     }
 
+    // grab list of images that has been saved in the File object related to Property__c
     @AuraEnabled(cacheable=true)
     public static List<ContentVersion> getImages(String propertyId){
         try {
-            // return [SELECT ContentDocumentId  FROM ContentDocumentLink where LinkedEntityId =:recordId  and LinkedEntity.Type='Property__c' LIMIT 1];
             List<ContentDocumentLink> cdlList = [SELECT Id, ContentDocument.LatestPublishedVersionId FROM ContentDocumentLink WHERE LinkedEntityId = :propertyId];
             Set<String> cdlIdList = new Set<String>();
             for(ContentDocumentLink cdl : cdlList) {

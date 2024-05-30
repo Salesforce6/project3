@@ -39,18 +39,20 @@ export default class MaintenanceRequest extends NavigationMixin(LightningElement
     userInfo;
 
     handleSuccess() {
-        // const evt = new ShowToastEvent({
-        //     title: 'Maintenance Request received',
-        //     message: 'Case ID: ' + event.detail.id,
-        //     variant: 'success',
-        // });
-        // this.dispatchEvent(evt);
+       
         Toast.show({
             label: 'Success',
             message: 'Maintenance form has been submitted',
             mode: 'sticky',
             variant: 'success'
         }, this);
+
+        this[NavigationMixin.Navigate]({
+            type: 'comm__namedPage',
+            attributes: {
+                name: 'Home', // Correct API name
+            }
+        });
     }
 
 
