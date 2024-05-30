@@ -11,6 +11,7 @@ import CityField from '@salesforce/schema/Property__c.City__c'
 import BedField from '@salesforce/schema/Property__c.Beds__c'
 import BathroomField from '@salesforce/schema/Property__c.Bathrooms__c'
 import SqftField from '@salesforce/schema/Property__c.Sqft__c'
+import PriceField from '@salesforce/schema/Property__c.Rent__c';
 
 
 export default class propertyDetailPage extends LightningElement {  
@@ -31,6 +32,7 @@ export default class propertyDetailPage extends LightningElement {
         beds: BedField.fieldApiName,
         bath:BathroomField.fieldApiName,
         sqft:SqftField.fieldApiName,
+        price:PriceField.fieldApiName,
     }
     
     @wire(CurrentPageReference)

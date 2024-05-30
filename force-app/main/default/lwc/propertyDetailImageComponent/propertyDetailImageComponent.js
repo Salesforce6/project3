@@ -2,6 +2,7 @@ import { LightningElement, wire, api, track } from 'lwc';
 import { getFieldValue, getRecord } from 'lightning/uiRecordApi';
 import ImageField from '@salesforce/schema/ContentDocument.LatestPublishedVersion.VersionDataUrl';
 import getImages from '@salesforce/apex/propertyClass.getImages'; 
+import getMainImages from '@salesforce/apex/propertyClass.getMainImages';
 
 export default class PropertyDetailImageComponent extends LightningElement {
 
@@ -12,6 +13,7 @@ export default class PropertyDetailImageComponent extends LightningElement {
     imgRecord = [];
     @track imgList;
     parameterImg;
+    firstImage;
 
 
 
@@ -22,6 +24,16 @@ export default class PropertyDetailImageComponent extends LightningElement {
         }
         else if (error){
             this.imgList = undefined;
+        }
+    }
+
+    @wire(getMainImages, {recordId: "$recordId"})
+    prop2Images({data, error}){
+        if(data){
+            this.firstImage = data;
+        }
+        else if (error){
+            this.firstImage = undefined;
         }
     }
 

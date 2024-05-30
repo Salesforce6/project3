@@ -1,13 +1,18 @@
 <template>
-    <lightning-card>
-        <form class="createForm">
-            <lightning-input required label="First Name" name="FirstName" onchange={changeHandlerLead}></lightning-input>
-            <lightning-input required label="Last Name" name="LastName" onchange={changeHandlerLead}></lightning-input>
-            <lightning-input required label="Email" name="Email" type="Email" onchange={changeHandlerLead}></lightning-input>
-            <lightning-input required label="Tour Date" class="dateInput"  min={minDate} message-when-range-underflow="Past dates should not be selected" type="datetime" name="Touring_Date__c" onchange={changeHandlerTour}></lightning-input>
-            <lightning-button label="Submit" onclick={submitTour} variant="brand"></lightning-button>
-        </form>
-    </lightning-card>
+        <div class="slds-grid slds-wrap">
+            <form class="createForm">
+                <div class="slds-p-around_medium slds-col">
+                    <h1>Register for a tour today!</h1>
+                    <lightning-input required label="First Name" name="FirstName" onchange={changeHandlerLead}></lightning-input>
+                    <lightning-input required label="Last Name" name="LastName" onchange={changeHandlerLead}></lightning-input>
+                    <lightning-input required label="Email" name="Email" type="Email" onchange={changeHandlerLead}></lightning-input>
+                    <lightning-input required label="Tour Date" class="dateInput"  min={minDate} message-when-range-underflow="Past dates should not be selected" type="datetime" name="Touring_Date__c" onchange={changeHandlerTour}></lightning-input>
+                </div>
+                <div class="slds-grid slds-grid_align-end">
+                    <lightning-button class="slds-col slds-p-right_x-small" label="Submit" onclick={submitTour} variant="brand"></lightning-button>
+                </div>
+            </form>
+        </div>
     
     <!-- <lightning-card>
         <form class="createForm">

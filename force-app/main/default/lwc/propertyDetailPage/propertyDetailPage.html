@@ -1,26 +1,40 @@
 <template>
-    <lightning-card>
         <template lwc:if={recordId}>
-            <c-property-detail-image-component record-id={recordId}></c-property-detail-image-component>
-                <lightning-record-view-form
-                object-api-name={objectApiName}
-                record-id={recordId}>
-                <lightning-card>
-                    <lightning-output-field field-name={fields.name}></lightning-output-field>
-                    <lightning-output-field field-name={fields.beds}></lightning-output-field>
-                    <lightning-output-field field-name={fields.bath}></lightning-output-field>
-                    <lightning-output-field field-name={fields.sqft}></lightning-output-field>
-                    <lightning-output-field field-name={fields.pets}></lightning-output-field>
-                    <lightning-output-field field-name={fields.street}></lightning-output-field>
-                    <lightning-output-field field-name={fields.state}></lightning-output-field>
-                    <lightning-output-field field-name={fields.city}></lightning-output-field>
-                    <lightning-output-field field-name={fields.zipCode}></lightning-output-field>
-                    <lightning-output-field field-name={fields.description}></lightning-output-field>
-                </lightning-card>
-                </lightning-record-view-form>
-                <c-tour-guide-component record-id={recordId}></c-tour-guide-component>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col  slds-size_1-of-1 slds-order_2 slds-large-size_1-of-3 slds-large-order_1">
+                    <lightning-record-view-form
+                    object-api-name={objectApiName}
+                    record-id={recordId}>
+                        <div class="background-Color slds-grid slds-wrap slds-box slds-gutters  slds-box_x-small slds-m-left_x-small slds-align_absolute-center">
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.name}></lightning-output-field>
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.beds}></lightning-output-field>
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.bath}></lightning-output-field>
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.sqft}></lightning-output-field>
+                                    <lightning-output-field  class="slds-m-around_xx-small" field-name={fields.pets}></lightning-output-field>
+                                    <lightning-output-field  class="slds-m-around_xx-small" field-name={fields.price}></lightning-output-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.street}></lightning-output-field>
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.state}></lightning-output-field>
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.city}></lightning-output-field>
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.zipCode}></lightning-output-field>
+                                    <lightning-output-field class="slds-m-around_xx-small" field-name={fields.description}></lightning-output-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-3 slds-align_absolute-center">
+                                <c-tour-guide-component record-id={recordId}></c-tour-guide-component>
+                            </div>
+                        </div>
+                    </lightning-record-view-form>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-order_1 slds-large-size_2-of-3 slds-large-order_2">
+                    <c-property-detail-image-component record-id={recordId}></c-property-detail-image-component>
+                </div>
+             </div>
+             <div>
+
+            </div>
         </template>
-    </lightning-card>
 
     <!--
     <div>Carousel Test</div>

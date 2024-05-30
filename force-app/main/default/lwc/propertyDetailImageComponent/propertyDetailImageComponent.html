@@ -1,11 +1,23 @@
 <template>
-        <!-- <template lwc:if={imgList}>
-            <template for:each={imgList} for:item="img">
-                <div key={img.Id} class="slds-col">
-                    <img src={img.VersionDataUrl}/> 
-                </div>
-            </template> 
-        </template>   -->
+
+
+        <template lwc:if={imgList}>
+            <div class="slds-grid slds-wrap slds-grid_align-center">
+                    <template for:each={firstImage} for:item="mainImg">
+                        <div key={mainImg.Id} class="slds-col slds-m-bottom_x-small slds-size_10-of-12 slds-align_absolute-center">
+                            <img src={mainImg.VersionDataUrl}/>
+                        </div>
+
+                    </template>
+                <div class="slds-col slds-grid slds-grid_align-center slds-wrap slds-gutters slds-size_1-of-1 slds-large-size_1-of-2">
+                <template for:each={imgList} for:item="img">
+                    <div key={img.Id} class="slds-col slds-size_12-of-12 slds-m-bottom_x-small slds-large-size_1-of-2 slds-align_absolute-center">
+                        <img src={img.VersionDataUrl}/> 
+                    </div>
+                </template> 
+                 </div>
+            </div>
+        </template>  
 
         <!-- <lightning-card>Testing Display an image from 
             ContentDocument {imageUrl}</lightning-card>
@@ -14,19 +26,18 @@
             <img src={imageUrl}/>
         </template> -->
 
-        <template lwc:if={imgList}>
+        <!-- <template lwc:if={imgList}>
             <div class="slds-size_3-of-4">
                 <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
                     <lightning-carousel class="slds-carousel" disable-auto-scroll slot=1>
                         <div>
                             <template for:each={imgList} for:item="img">
-                                    <lightning-carousel-image class="max-large-" key={img.Id} src={img.VersionDataUrl}
-                                    alternative-text = "First card accessible description."></lightning-carousel-image>
+                                    <lightning-carousel-image key={img.Id} src={img.VersionDataUrl}></lightning-carousel-image>
                             </template>
                         </div>
                     </lightning-carousel>
                 </div>
             </div>
-        </template>
+        </template> -->
 
 </template>
