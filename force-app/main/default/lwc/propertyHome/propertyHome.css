@@ -1,0 +1,127 @@
+.gutter-control {
+    width: 99%;
+}
+
+/* card container */
+.card-wrapper {
+    display:flex;
+    justify-content: center;
+}
+
+/* wrapping of cards */
+.custom-card-wrapper {
+    background-color: rgb(167, 158, 192);
+    border: 2px solid lightgray;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    margin: 15px;
+    width: 330px;
+}
+
+.property-wrapper {
+    display: flex-column;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+
+.available {
+    background-color: rgb(43, 43, 79);
+    border-radius: 40px;
+    text-align: center;
+}
+
+.image {
+    flex: 1;
+    padding: 10px;
+    align-content:center;
+}
+
+.info {
+    flex:2;
+    padding: 10px;
+}
+
+.property_home_detail_available {
+    border-radius: 40px;
+    color: white;
+    font-weight: bold;
+    padding-left: 30px;
+    font-size: 35px;
+}
+
+.property_home_detail_name {
+    font-weight: bold;
+    padding-left: 30px;
+    font-size: 35px;
+}
+
+.property_home_detail {
+    padding-left: 30px;
+    font-size: 25px;
+}
+
+.more-detail-button {
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+    font-size: 25px;
+    background-color: rgb(43, 43, 79);
+    color: white;
+    border-radius: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+    .custom-card-wrapper {
+        margin: 10px;
+        width: 315px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .property_home_detail_available {
+        text-align: center;
+    }
+    .info {
+        width: 100%;
+    }
+    .custom-card-wrapper {
+        margin: 15px;
+        width: 350px;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .custom-card-wrapper {
+        margin: 10px 10px;
+        height: 375px;
+        display: block;
+        width: 440px;
+    }
+
+    .property-wrapper {
+        display: block;
+    }
+
+    .image, .info {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .property_home_detail_available,
+    .property_home_detail_name,
+    .property_home_detail
+     {
+        padding-left: 10px; 
+        font-size: 25px; 
+    }
+
+    .property_home_detail {
+        padding-left: 10px; 
+        font-size: 20px; 
+    }
+}

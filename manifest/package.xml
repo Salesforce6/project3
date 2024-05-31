@@ -5,7 +5,8 @@
         <members>NavigationMenuItemsController</members>
         <members>PropertyHelper</members>
         <members>PropertiesHomeController</members>
-        
+        <members>propertyClass</members>
+        <members>MaintenanceRequestHelper</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -18,8 +19,6 @@
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <members>*</members>
-        <name>StaticResource</name>
     </types>
     <version>59.0</version>
 </Package>

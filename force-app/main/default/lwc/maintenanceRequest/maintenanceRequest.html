@@ -1,0 +1,23 @@
+<template>
+    <div class="title">
+        <h2 >Maintenance Request Form</h2>
+    </div>
+    
+    <div class="container">
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={userInfo.data}
+            >
+                <lightning-input-field field-name={subjectField}> </lightning-input-field>
+                <lightning-input-field field-name={typeField}> </lightning-input-field>
+                <lightning-input-field field-name={priorityField}> </lightning-input-field>
+                <lightning-input-field field-name={descriptionField}> </lightning-input-field>
+                
+                <div class="button-container">
+                    <button class="button" type="submit" onclick={handleSuccess}><label>Save</label>label></button>
+                    <!-- <lightning-button type="submit" label="Save" onclick={handleSuccess}></lightning-button> -->
+                </div>
+                
+            </lightning-record-edit-form>
+    </div>
+</template>
