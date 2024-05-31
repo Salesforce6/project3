@@ -26,7 +26,6 @@ export default class TourGuideComponent extends LightningElement {
     tourName;
     @api
     recordId;
-    leadId;
 
     changeHandlerLead(event){
         const {name, value} = event.target;
@@ -37,7 +36,7 @@ export default class TourGuideComponent extends LightningElement {
         this.tourFields[name]=value;
     }
 
-    async submitTour(){
+    submitTour(){
         let dateChecker = this.template.querySelector('.dateInput').value;
         if(dateChecker > this.minDate & this.leadFields.FirstName != null & this.leadFields.LastName != null & this.leadFields.Email != null)
             {
@@ -45,23 +44,20 @@ export default class TourGuideComponent extends LightningElement {
                 this.tourName = this.leadFields.FirstName + ' ' + this.leadFields.LastName + ' Tour';
                 this.leadFields.Status = 'Open - Not Contacted';
                 const recordInput = {apiName:LeadObject.objectApiName, fields:this.leadFields}
-                try {
-                    const leadRecord = await createRecord(recordInput);
-                    this.leadId = leadRecord.Id;
-                    this.tourFields.Lead__c = this.leadId;
+                createRecord(recordInput).then(res => {
+                    this.tourFields.Lead__c = res.id;
                     this.tourFields.Name = this.tourName;
                     this.tourFields.Property__c = this.recordId;
                     const conRecordInput = {apiName:tourObject.objectApiName, fields:this.tourFields}
-                    await createRecord(conRecordInput);
+                    createRecord(conRecordInput);
                     this.successShowToast();
                     this.template.querySelector('form.createForm').reset();
                     this.leadFields={};
                     this.tourFields={};
-
-                } catch(error){
+                }).catch(error=>{
                     this.failureShowToast();
                     console.log(error);
-                }
+                })
             }
             else{
                 this.missingFieldsShowToast();
@@ -105,6 +101,8 @@ export default class TourGuideComponent extends LightningElement {
         }, this);
     }
 
+    // This is old code ----
+    //
     // toastContainer;
     // minDate = new Date().toISOString().slice(0,10);
     // leadFields ={};
@@ -112,6 +110,7 @@ export default class TourGuideComponent extends LightningElement {
     // tourName;
     // @api
     // recordId;
+    // leadId;
 
     // changeHandlerLead(event){
     //     const {name, value} = event.target;
@@ -122,30 +121,30 @@ export default class TourGuideComponent extends LightningElement {
     //     this.tourFields[name]=value;
     // }
 
-    // submitTour(){
+    // async submitTour(){
     //     let dateChecker = this.template.querySelector('.dateInput').value;
     //     if(dateChecker > this.minDate & this.leadFields.FirstName != null & this.leadFields.LastName != null & this.leadFields.Email != null)
     //         {
     //             this.leadFields.Company = this.leadFields.FirstName + ' ' + this.leadFields.LastName;
     //             this.tourName = this.leadFields.FirstName + ' ' + this.leadFields.LastName + ' Tour';
     //             this.leadFields.Status = 'Open - Not Contacted';
-    //             console.log(this.tourName);
     //             const recordInput = {apiName:LeadObject.objectApiName, fields:this.leadFields}
-    //             createRecord(recordInput).then(res => {
-    //                 console.log(this.tourName);
-    //                 this.tourFields.Lead__c = res.id;
+    //             try {
+    //                 const leadRecord = await createRecord(recordInput);
+    //                 this.tourFields.Lead__c = leadRecord.Id;
     //                 this.tourFields.Name = this.tourName;
     //                 this.tourFields.Property__c = this.recordId;
     //                 const conRecordInput = {apiName:tourObject.objectApiName, fields:this.tourFields}
-    //                 createRecord(conRecordInput);
+    //                 await createRecord(conRecordInput);
     //                 this.successShowToast();
     //                 this.template.querySelector('form.createForm').reset();
     //                 this.leadFields={};
     //                 this.tourFields={};
-    //             }).catch(error=>{
+
+    //             } catch(error){
     //                 this.failureShowToast();
     //                 console.log(error);
-    //             })
+    //             }
     //         }
     //         else{
     //             this.missingFieldsShowToast();
@@ -188,5 +187,4 @@ export default class TourGuideComponent extends LightningElement {
     //         variant: 'error',
     //     }, this);
     // }
-
 }
