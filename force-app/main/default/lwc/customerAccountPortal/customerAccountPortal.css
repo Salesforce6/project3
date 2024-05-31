@@ -1,0 +1,17 @@
+.custom-card-wrapper {
+    background-color: rgb(167, 158, 192);
+    border: 2px solid lightgray;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    margin: 30px;
+    justify-content: center;
+    text-align: center;
+}
+
+.available {
+    background-color: rgb(43, 43, 79);
+    border-radius: 40px;
+    text-align: center;
+}
