@@ -44,3 +44,5 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+force-app/main/default/classes/MaintenanceRequestHelper.cls
+force-app/main/default/classes/MaintenanceRequestHelper.cls-meta.xml

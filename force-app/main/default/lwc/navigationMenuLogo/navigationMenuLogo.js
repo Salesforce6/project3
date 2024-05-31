@@ -7,9 +7,7 @@ import AZINSURANCE_MOBILE_LOGO from '@salesforce/resourceUrl/marketingHamburgerM
 import CUSTOMER_LOGO from '@salesforce/resourceUrl/MenuLogoAgentSquare';//
 import CUSTOMER_MOBILE_LOGO from '@salesforce/resourceUrl/customerHamburgerMenuLogo';//
 
-export default class NavigationMenuLogo extends NavigationMixin(
-    LightningElement
-) {
+export default class NavigationMenuLogo extends NavigationMixin( LightningElement ) {
     @api formfactor;
     @api page;
 
@@ -24,14 +22,7 @@ export default class NavigationMenuLogo extends NavigationMixin(
 
     get logo() {
         if (this.formfactor === 'hamburger') {
-            switch (this.page) {
-                case 'agent':
-                    return AGENT_MOBILE_LOGO;
-                case 'customer':
-                    return CUSTOMER_MOBILE_LOGO;
-                default:
-                    return AZINSURANCE_MOBILE_LOGO;
-            }
+            return AGENT_LOGO;
         }
         switch (this.page) {
             case 'agent':

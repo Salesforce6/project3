@@ -3,7 +3,7 @@
 }
 .hero-container {
     height: var(--thisVaar, 720px);
-    box-shadow: inset 3px 16px 20px 8px rgba(0, 0, 0, 0.2), 0px -3px 20px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 3px 16px 20px 8px rgba(0, 0, 0, 0.2), 0px 20px 20px -15px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .caption {
-    position: sticky;
+    position: relative;
     top: 50%;
     text-align: center;
     display: flex;
@@ -32,8 +32,8 @@
 .blur {
     color: aliceblue;
     text-shadow: 0 0 20px black, 0 0 20px black, 0 0 20px black;
-    border: 1px solid white;
-    backdrop-filter: blur(4px) brightness(1.1);
+    /* border: 1px solid white; */
+    /* backdrop-filter: blur(4px) brightness(1.1); */
     border-radius: 0.5em;
     padding: 0.5em 1em;
     display: flex;

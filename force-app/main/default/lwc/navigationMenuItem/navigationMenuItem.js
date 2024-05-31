@@ -2,9 +2,7 @@ import { LightningElement, api, track } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import basePath from '@salesforce/community/basePath';
 
-export default class NavigationMenuItem extends NavigationMixin(
-    LightningElement
-) {
+export default class NavigationMenuItem extends NavigationMixin(LightningElement) {
     /**
      * The NavigationMenuItem from the Apex controller,
      * contains a label and a target.
